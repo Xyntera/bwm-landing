@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --electric-yellow: #FFE600;
+  --soft-turquoise: #00D6C2;
+  --bright-blue: #3083FF;
+  --cloud-white: #F9F9F9;
+  --deep-charcoal: #222831;
+  
+  /* Semantic Colors */
+  --background: var(--cloud-white);
+  --foreground: var(--deep-charcoal);
+  --primary: var(--bright-blue);
+  --accent: var(--electric-yellow);
+  --accent-turquoise: var(--soft-turquoise);
+}
+
+@theme inline {
+  /* Colors */
+  --color-electric-yellow: var(--electric-yellow);
+  --color-soft-turquoise: var(--soft-turquoise);
+  --color-bright-blue: var(--bright-blue);
+  --color-cloud-white: var(--cloud-white);
+  --color-deep-charcoal: var(--deep-charcoal);
+  
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
+  --color-accent-turquoise: var(--accent-turquoise);
+  
+  /* Typography - using system fonts as fallbacks */
+  --font-sans: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-heading: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Glassmorphism */
+  --glass-bg: rgba(249, 249, 249, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-backdrop: blur(10px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Glassmorphism utility classes */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+}
+
+/* Neon glow effects */
+.neon-glow {
+  box-shadow: 0 0 20px rgba(48, 131, 255, 0.3);
+}
+
+.neon-glow-yellow {
+  box-shadow: 0 0 20px rgba(255, 230, 0, 0.4);
+}
+
+.neon-glow-turquoise {
+  box-shadow: 0 0 20px rgba(0, 214, 194, 0.4);
+}
+
+/* 3D Flip Card Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-preserve-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cloud-white);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bright-blue);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--soft-turquoise);
+}
