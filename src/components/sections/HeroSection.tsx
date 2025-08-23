@@ -1,19 +1,9 @@
 'use client';
 
 import { Suspense } from 'react';
-import dynamic from 'next/dynamic';
 import { Button } from '@/components/ui/Button';
 import { HUDCard } from '@/components/ui/HUDCard';
-
-// Dynamically import 3D components to avoid SSR issues
-const Scene3D = dynamic(() => import('@/components/ui/Scene3D'), { 
-  ssr: false,
-  loading: () => (
-    <div className="w-full h-full bg-gradient-to-br from-bright-blue/20 to-soft-turquoise/20 rounded-xl flex items-center justify-center">
-      <div className="animate-pulse text-bright-blue">Loading 3D Experience...</div>
-    </div>
-  )
-});
+import Scene3D from '@/components/ui/Scene3D';
 
 export function HeroSection() {
   return (
